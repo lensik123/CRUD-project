@@ -19,9 +19,3 @@
 - **Thymeleaf**: шаблонизатор для отображения страниц.
 - **PostgreSQL**: реляционная база данных для хранения данных пользователей.
 
-## Установка и запуск
-
-1. **Клонируйте репозиторий:**
-   ```sh
-   git clone https://github.com/yourusername/spring-mvc-crud.git
-   cd spring-mvc-crud
