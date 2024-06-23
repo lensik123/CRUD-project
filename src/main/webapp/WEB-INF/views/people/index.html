@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>People</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 800px;
+      margin-top: 50px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .person {
+      padding: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .person a {
+      text-decoration: none;
+      color: #007BFF;
+      font-size: 1.2em;
+    }
+    .person a:hover {
+      text-decoration: underline;
+    }
+    .create-button {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      text-align: center;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    .create-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>People</h1>
+  <div th:each="person : ${people}" class="person">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + ', ' + person.getAge()}">user</a>
+  </div>
+  <a class="create-button" href="people/new">Create new person</a>
+</div>
+
+</body>
+</html>
